@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html ng-app>
+<head>
+  <meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script> 
+ <script> 
+var Ctrl = function($scope){
+  	$scope.cssObj = { 
+		useRed: 'red', 
+		useBold: 'bold', 
+		useItalic: 'italic'
+	};
+ $scope.friends = 
+ [
+    {name: '路人甲' , age:5},
+    {name: '村名a', age:10},
+    {name: '隱形的人', age:15}];
+	$scope.selectd = 'useItalic';
+};
+</script> 
+
+ <style>
+	.even {
+		color: red;
+	}
+	.odd {
+		color: blue;
+	}
+</style>
+
+</head>
+<body>
+<div class="well span4" style="margin-top:20px;" ng-controller="Ctrl">
+<table>
+  <tr ng-repeat="person in friends" ng-class-even="'even'" ng-class-odd="'odd'">
+    <td>{{ person.name }}</td>
+  </tr>
+  </table>
+</div>
+</body>
+</html>

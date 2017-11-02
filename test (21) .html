@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="MyApp">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+	<script src="js/controller.js"></script>
+  <script>
+  var myApp = angular.module('MyApp', []);
+ 
+    myApp.controller('Ctrl', function($scope){
+	$scope.text = 'Hello Kitty';
+    });
+    
+    myApp.filter('camel', function(){
+	return function(str){
+		return str.replace(/\b\w/g, chr => chr.toUpperCase()).replace(" ", "");
+	};
+   });
+    </script>
+</head>
+<body>
+	<div class="well span4" style="margin-top:20px;" ng-controller="Ctrl">
+		{{ text | camel}}
+	</div>
+</body>
+</html>

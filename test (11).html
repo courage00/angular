@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html ng-app="CalApp2">
+<head>
+  <meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>  
+</head>
+ <script>
+   var calApp2 = angular.module('CalApp2', []);
+   calApp2.controller('CalCtrl', function($scope){
+	$scope.num1 = 11;
+	$scope.num2 = 11;
+});
+
+</script>
+<body>
+<form class="span5 form-inline" style="margin-top:20px;" ng-controller="CalCtrl">
+	<div class="alert alert-info">
+		<input type="number" class="input-small" ng-model="num1">
+		<span>*</span>
+		<input type="number" class="input-small"ng-model="num2" disabled>
+		<span>=</span>
+		{{ num1 / num2}}
+	</div>
+</form>
+</body>
+</html>

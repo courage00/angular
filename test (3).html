@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+	<script>
+	var ShowHideCtrl = function($scope){
+	$scope.checked = false;
+	$scope.eng = '路';
+    };
+	</script>
+</head>
+<body>
+	<div class="well span6" style="margin-top:20px;" ng-controller="ShowHideCtrl">
+		<label>Show?
+			<input type="checkbox" ng-model="checked">
+		</label>
+		<hr>
+		<h2 ng-show="checked">{{ eng }}</h2>
+		<h2 ng-hide="checked">隱藏中</h2>
+		<label>English?
+	     <input type="checkbox" ng-model="eng" ng-true-value="road" ng-false-value="路">
+        </label>
+	</div>
+</body>
+</html>

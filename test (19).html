@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html ng-app>
+<head>
+  <meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script> 
+ <script> 
+var ctrl = function($scope){
+  $scope.change = function()
+  {
+    $scope.myStyle={color:'red',fontSize:'24px','background-color':'yellow'};
+  };
+  
+  $scope.clear = function()
+  {
+    $scope.myStyle={};
+  };
+};
+</script> 
+
+</head>
+<body>
+<div class="well span4" style="margin-top:20px;" ng-init="myStyle={}" ng-controller="ctrl">
+	<input type="button" class="btn btn-primary" value="Set" ng-click="change()">
+	<input type="button" class="btn btn-warning" value="Clear" ng-click="clear()">
+	<br><br>
+	<div ng-style="myStyle">testest</div>
+	<pre >myStyle = {{ myStyle }}</pre >
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<meta name="robots" content="noindex">
+
+<meta name="robots" content="noindex">
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+	<script>
+    var Ctrl = function($scope){
+	$scope.skills = [];
+    $scope.friends = [];
+	$scope.submit = function(){
+      	$scope.friends.push({
+		name: $scope.name, 
+		age: $scope.age,
+        skills:$scope.skills
+	});
+	$scope.name=null;
+      $scope.age=null;
+      $scope.skills =null;
+ 	}
+    };
+	</script>
+</head>
+<body>
+	<form class="well span6" style="margin-top:20px;" ng-submit="submit()" ng-controller="Ctrl">
+	<label>名字:</label>
+ 	<input type="text" ng-model="name" name="name" />
+      <label>年齡:</label>
+ 	<input type="number" ng-model="age" name="age" />
+      <label>技能:</label>
+ 	<input type="text" ng-model="skills" name="skill" />
+ 
+	<input type="submit" id="submit" value="加入" class="btn btn-important"/>
+	<table>
+      <tr>
+        <th>名字</th><th>年齡</th><th>技能</th>
+        </tr>
+      <tr class="alert alert-info" ng-repeat="friend in friends">
+        <th>{{friend.name}}</th><th>{{friend.age}}</th><th>{{friend.skills}}</th>
+        </tr>
+      </table>
+</form>
+</body>
+</html>

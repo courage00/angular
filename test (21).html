@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html ng-app>
+<head>
+  <meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script> 
+ <script> 
+ </script> 
+<style>
+	input[type="text"].myFocus {
+		background-color: yellow;
+	}
+	input[type="text"].myBlur {
+		background-color: red;
+	}
+</style>
+</head>
+<body>
+<div class="well span4" style="margin-top:20px;" ng-init="focus=false;blur=false;">
+	<input type="text" ng-class="{ myFocus: focus, myBlur: !focus }" ng-focus="focus=true;" ng-blur="focus=false;">
+</div>
+
+</div>
+</body>
+</html>

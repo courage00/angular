@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="OnePiece">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+	<script src="http://code.angularjs.org/1.2.0-rc.2/angular-route.min.js"></script>
+	<script src="js/controller.js">
+      
+   var onePiece = angular.module('OnePiece', ['ngRoute'], function($routeProvider){
+	$routeProvider.when('/', {
+		templateUrl: 'view.html'
+	});
+	});
+ 
+   onePiece.controller('OnePieceCtrl', function($scope){
+	$scope.friends = [{
+		name: '蒙其·D·魯夫', 
+		reward: 400000000
+	},
+                      {
+		name: '布魯克', 
+		reward: 33000000
+	}];
+    });
+  </script>
+</head>
+<body>
+	<div class="well span4" style="margin-top:20px;" ng-controller="OnePieceCtrl">
+		<h2>海賊王</h2>
+		<div ng-view></div>
+	</div>
+</body>
+</html>

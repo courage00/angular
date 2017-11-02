@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html ng-app="MyApp">
+<head>
+  <meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>  
+</head>
+ <script>
+var myApp = angular.module('MyApp', []);
+ 
+myApp.controller('Ctrl', ['$scope', function(a){
+	a.name = '(新)人';
+}]);
+   myApp.controller('Ctrl2', ['$scope', function(a){
+	a.name = '(更新)人';
+}]);
+</script>
+<body>
+<div class="well span4" style="margin-top:20px;" ng-controller="Ctrl">
+	{{ name }}
+</div>
+  <div class="well span4" style="margin-top:20px;" ng-controller="Ctrl2">
+	{{ name }}
+</div>
+</body>
+</html>
